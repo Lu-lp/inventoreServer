@@ -1,0 +1,30 @@
+package sysu.lulp.service.impl;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+class UserServiceImplTest {
+
+    private final UserServiceImpl userService;
+    @Autowired
+    UserServiceImplTest(UserServiceImpl userService) {
+        this.userService = userService;
+    }
+
+
+    @Test
+    void queryByName() {
+        userService.queryByName("admin2");
+        System.out.println( userService.queryByName("admin2").getUsername() +": " +
+                userService.queryByName("admin2").getPassword());
+    }
+
+    @Test
+    void testQueryByName() {
+    }
+}
